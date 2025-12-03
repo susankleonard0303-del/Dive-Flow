@@ -1,7 +1,4 @@
-/* ---------------------------------------
-   WEST POINT PARACHUTE TEAM THEME
----------------------------------------- */
-
+/* WEST POINT THEME */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,10 +6,7 @@ body {
     color: #ffcc00;
 }
 
-/* ---------------------------------------
-   HEADER — CENTERED TITLE + LOGO
----------------------------------------- */
-
+/* HEADER */
 header {
     background: #1a1a1a;
     border-bottom: 2px solid #ffcc00;
@@ -31,14 +25,11 @@ header {
     height: 70px;
 }
 
-/* Larger screens: put logo & title side-by-side */
-
 @media (min-width: 700px) {
     .header-content {
         flex-direction: row;
         justify-content: center;
     }
-
     .logo {
         height: 65px;
         margin-right: 10px;
@@ -50,15 +41,13 @@ h1 {
     margin: 0;
 }
 
-/* ---------------------------------------
-   SECTION + BUTTONS
----------------------------------------- */
-
+/* SECTIONS */
 .section {
     padding: 20px 10px;
     text-align: center;
 }
 
+/* BUTTONS */
 .button-row {
     display: flex;
     flex-wrap: wrap;
@@ -76,17 +65,13 @@ button {
     border: none;
     cursor: pointer;
     font-weight: bold;
-    transition: 0.2s;
 }
 
 button:hover {
     background: #ffdb4d;
 }
 
-/* ---------------------------------------
-   CARDS & CONTENT
----------------------------------------- */
-
+/* CARDS */
 .card {
     background: #1a1a1a;
     padding: 18px;
@@ -97,10 +82,7 @@ button:hover {
     border: 2px solid #ffcc00;
 }
 
-/* ---------------------------------------
-   IMAGES (medium-sized, responsive)
----------------------------------------- */
-
+/* IMAGES */
 .block-img,
 .key-img {
     width: 80%;
@@ -118,10 +100,7 @@ button:hover {
     }
 }
 
-/* ---------------------------------------
-   FORMATION GRID (2-way)
----------------------------------------- */
-
+/* 2-WAY FORMATIONS */
 .formations {
     display: flex;
     justify-content: space-between;
@@ -138,10 +117,7 @@ button:hover {
     border-radius: 10px;
 }
 
-/* ---------------------------------------
-   4-WAY SEQUENCE STEPS
----------------------------------------- */
-
+/* 4-WAY SEQUENCE */
 .sequence-step {
     margin-bottom: 25px;
     text-align: center;
@@ -152,21 +128,14 @@ button:hover {
     margin-bottom: 6px;
 }
 
-/* ---------------------------------------
-   DIVIDER
----------------------------------------- */
-
+/* DIVIDER */
 .divider {
     border: none;
     border-top: 2px solid #ffcc00;
     margin: 25px 20px;
 }
 
-/* ---------------------------------------
-   HIDDEN UTILITY
----------------------------------------- */
-
+/* UTILITIES */
 .hidden {
     display: none;
 }
-
