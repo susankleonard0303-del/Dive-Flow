@@ -1,3 +1,7 @@
+/* ---------------------------------------
+   WEST POINT PARACHUTE TEAM THEME
+---------------------------------------- */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,17 +9,40 @@ body {
     color: #ffcc00;
 }
 
+/* ---------------------------------------
+   HEADER — CENTERED TITLE + LOGO
+---------------------------------------- */
+
 header {
-    display: flex;
-    align-items: center;
-    padding: 15px;
     background: #1a1a1a;
     border-bottom: 2px solid #ffcc00;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
 }
 
 .logo {
-    height: 60px;
-    margin-right: 15px;
+    height: 70px;
+}
+
+/* Larger screens: put logo & title side-by-side */
+
+@media (min-width: 700px) {
+    .header-content {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .logo {
+        height: 65px;
+        margin-right: 10px;
+    }
 }
 
 h1 {
@@ -23,82 +50,123 @@ h1 {
     margin: 0;
 }
 
+/* ---------------------------------------
+   SECTION + BUTTONS
+---------------------------------------- */
+
 .section {
+    padding: 20px 10px;
     text-align: center;
-    padding: 20px;
+}
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
 }
 
 button {
     padding: 12px 20px;
     font-size: 1rem;
-    margin: 10px;
     border-radius: 8px;
     background: #ffcc00;
     color: black;
     border: none;
     cursor: pointer;
     font-weight: bold;
+    transition: 0.2s;
 }
 
 button:hover {
     background: #ffdb4d;
 }
 
+/* ---------------------------------------
+   CARDS & CONTENT
+---------------------------------------- */
+
 .card {
     background: #1a1a1a;
-    padding: 20px;
+    padding: 18px;
     border-radius: 16px;
-    width: 90%;
+    width: 95%;
     max-width: 700px;
     margin: 20px auto;
     border: 2px solid #ffcc00;
 }
 
-.block-img {
-    width: 250px;      /* MEDIUM SIZE */
+/* ---------------------------------------
+   IMAGES (medium-sized, responsive)
+---------------------------------------- */
+
+.block-img,
+.key-img {
+    width: 80%;
+    max-width: 250px;
     display: block;
     margin: 15px auto;
-    border-radius: 8px;
+    border-radius: 6px;
     background: white;
 }
 
-.key-img {
-    width: 250px;
-    display: block;
-    margin: 0 auto 20px;
-    border-radius: 8px;
-    background: white;
+@media (max-width: 600px) {
+    .block-img,
+    .key-img {
+        max-width: 220px;
+    }
 }
+
+/* ---------------------------------------
+   FORMATION GRID (2-way)
+---------------------------------------- */
 
 .formations {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.formation, .randomCard {
+.formation,
+.randomCard {
     flex: 1;
+    min-width: 120px;
     margin: 10px;
     background: #333333;
-    padding: 10px;
+    padding: 12px;
     border-radius: 10px;
 }
 
-.divider {
-    border: none;
-    border-top: 2px solid #ffcc00;
-    margin: 30px;
-}
-
-.hidden {
-    display: none;
-}
+/* ---------------------------------------
+   4-WAY SEQUENCE STEPS
+---------------------------------------- */
 
 .sequence-step {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     text-align: center;
 }
 
 .step-label {
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
+
+/* ---------------------------------------
+   DIVIDER
+---------------------------------------- */
+
+.divider {
+    border: none;
+    border-top: 2px solid #ffcc00;
+    margin: 25px 20px;
+}
+
+/* ---------------------------------------
+   HIDDEN UTILITY
+---------------------------------------- */
+
+.hidden {
+    display: none;
+}
+
