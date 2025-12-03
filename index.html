@@ -3,59 +3,62 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2-Way Skydiving Dive Generator</title>
+    <title>Skydiving Dive Generator</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-    <header>
-        <h1>2-Way Skydiving Dive Generator</h1>
-        <p>Click the button to generate a randomized block + random.</p>
-    </header>
+<header>
+    <h1>Skydiving Dive Generator</h1>
+    <p>Select a dive type and generate a randomized sequence.</p>
+</header>
 
-    <main>
-        <button id="generateBtn">Generate 2-Way Dive</button>
+<main>
 
-        <div id="results" class="hidden">
-            <div class="card">
+    <div class="button-row">
+        <button id="btn2way">Generate 2-Way Dive</button>
+        <button id="btn4way">Generate 4-Way Dive</button>
+    </div>
 
-                <h2 id="diveCode">Dive: --</h2>
+    <div id="results" class="hidden">
+        <div class="card">
 
-                <!-- Block Image -->
-                <img id="blockImage" src="" alt="Block Image" class="block-img hidden">
+            <h2 id="diveCode">Dive: --</h2>
 
-                <!-- Formation breakdown -->
-                <div class="formations">
+            <!-- Block Image -->
+            <img id="blockImage" src="" alt="Block Image" class="block-img hidden">
 
-                    <div class="formation">
-                        <h3>Formation 1</h3>
-                        <p id="formation1">--</p>
-                    </div>
-
-                    <div class="formation">
-                        <h3>Inter</h3>
-                        <p id="inter">--</p>
-                    </div>
-
-                    <div class="formation">
-                        <h3>Formation 2</h3>
-                        <p id="formation2">--</p>
-                    </div>
-
+            <!-- Formation breakdown -->
+            <div class="formations">
+                <div class="formation">
+                    <h3>Formation 1</h3>
+                    <p id="formation1">--</p>
                 </div>
 
-                <!-- Random -->
-                <div class="randomCard">
-                    <h3>Random</h3>
-                    <p id="randomName">--</p>
+                <div class="formation">
+                    <h3>Inter</h3>
+                    <p id="inter">--</p>
                 </div>
 
+                <div class="formation">
+                    <h3>Formation 2</h3>
+                    <p id="formation2">--</p>
+                </div>
             </div>
+
+            <!-- Random -->
+            <div class="randomCard">
+                <h3>Random</h3>
+                <p id="randomName">--</p>
+            </div>
+
         </div>
+    </div>
 
-    </main>
+</main>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
+
