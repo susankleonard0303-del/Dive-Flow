@@ -3,58 +3,81 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Skydiving Dive Generator</title>
+    <title>West Point Parachute Team — Dive Generator</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
 <header>
-    <h1>Skydiving Dive Generator</h1>
-    <p>Select a dive type and generate a randomized sequence.</p>
+    <img src="parachute.png" class="logo" alt="WPPT Logo">
+    <h1>West Point Parachute Team Dive Generator</h1>
 </header>
 
 <main>
 
-    <div class="button-row">
+    <!-- 2-WAY SECTION -->
+    <section class="section">
+        <h2>2-Way Dive</h2>
         <button id="btn2way">Generate 2-Way Dive</button>
-        <button id="btn4way">Generate 4-Way Dive</button>
-    </div>
 
-    <div id="results" class="hidden">
-        <div class="card">
+        <div id="results2way" class="hidden">
+            <div class="card">
 
-            <h2 id="diveCode">Dive: --</h2>
+                <h3 id="diveCode2way">Dive: --</h3>
 
-            <!-- Block Image -->
-            <img id="blockImage" src="" alt="Block Image" class="block-img hidden">
+                <img id="blockImage2way" src="" class="block-img hidden">
 
-            <!-- Formation breakdown -->
-            <div class="formations">
-                <div class="formation">
-                    <h3>Formation 1</h3>
-                    <p id="formation1">--</p>
+                <div class="formations">
+                    <div class="formation">
+                        <h4>Formation 1</h4>
+                        <p id="formation1_2w">--</p>
+                    </div>
+
+                    <div class="formation">
+                        <h4>Inter</h4>
+                        <p id="inter_2w">--</p>
+                    </div>
+
+                    <div class="formation">
+                        <h4>Formation 2</h4>
+                        <p id="formation2_2w">--</p>
+                    </div>
                 </div>
 
-                <div class="formation">
-                    <h3>Inter</h3>
-                    <p id="inter">--</p>
+                <div class="randomCard">
+                    <h4>Random</h4>
+                    <p id="randomName2w">--</p>
                 </div>
 
-                <div class="formation">
-                    <h3>Formation 2</h3>
-                    <p id="formation2">--</p>
-                </div>
             </div>
-
-            <!-- Random -->
-            <div class="randomCard">
-                <h3>Random</h3>
-                <p id="randomName">--</p>
-            </div>
-
         </div>
-    </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- 4-WAY SECTION -->
+    <section class="section">
+        <h2>4-Way Dive</h2>
+
+        <div class="button-row">
+            <button id="btn4way_3rand">3 Randoms</button>
+            <button id="btn4way_4rand">4 Randoms</button>
+            <button id="btn4way_block">Block + 2 Randoms</button>
+        </div>
+
+        <img src="Key.png" id="keyImage" class="key-img hidden">
+
+        <div id="results4way" class="hidden">
+            <div class="card">
+                <h3 id="diveCode4way">Dive: --</h3>
+
+                <!-- Sequence goes here -->
+                <div id="sequenceContainer"></div>
+            </div>
+        </div>
+
+    </section>
 
 </main>
 
