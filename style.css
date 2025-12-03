@@ -1,81 +1,104 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background: linear-gradient(to bottom, #1e3c72, #2a5298);
-    color: white;
+    background: #000000;
+    color: #ffcc00;
 }
 
 header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #1a1a1a;
+    border-bottom: 2px solid #ffcc00;
+}
+
+.logo {
+    height: 60px;
+    margin-right: 15px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.section {
     text-align: center;
     padding: 20px;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.button-row {
-    display: flex;
-    gap: 20px;
-}
-
 button {
-    padding: 12px 24px;
-    font-size: 1.1rem;
-    margin: 20px 0;
+    padding: 12px 20px;
+    font-size: 1rem;
+    margin: 10px;
     border-radius: 8px;
     background: #ffcc00;
-    color: #333;
+    color: black;
     border: none;
     cursor: pointer;
     font-weight: bold;
-    transition: 0.2s;
 }
 
 button:hover {
-    background: #ffd633;
+    background: #ffdb4d;
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.15);
+    background: #1a1a1a;
     padding: 20px;
     border-radius: 16px;
     width: 90%;
     max-width: 700px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    margin: 20px auto;
+    border: 2px solid #ffcc00;
 }
 
 .block-img {
-    width: 100%;
-    max-width: 400px;
+    width: 250px;      /* MEDIUM SIZE */
     display: block;
-    margin: 20px auto;
+    margin: 15px auto;
+    border-radius: 8px;
     background: white;
-    border-radius: 10px;
-    padding: 10px;
+}
+
+.key-img {
+    width: 250px;
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 8px;
+    background: white;
 }
 
 .formations {
     display: flex;
     justify-content: space-between;
-    margin-top: 15px;
 }
 
 .formation, .randomCard {
     flex: 1;
     margin: 10px;
-    background: rgba(0,0,0,0.25);
-    padding: 15px;
-    border-radius: 12px;
-    text-align: center;
+    background: #333333;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.divider {
+    border: none;
+    border-top: 2px solid #ffcc00;
+    margin: 30px;
 }
 
 .hidden {
     display: none;
 }
 
-h3 {
-    margin-bottom: 10px;
+.sequence-step {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.step-label {
+    font-weight: bold;
+    margin-bottom: 5px;
 }
