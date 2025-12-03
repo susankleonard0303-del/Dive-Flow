@@ -1,6 +1,27 @@
-// -------------------------------
-// 2-WAY BLOCK BANK
-// -------------------------------
+// ----------------------------------
+// BLOCK IMAGE MAPPING
+// ----------------------------------
+const blockImages = {
+    1: "Block 1.png",
+    2: "Block 2.png",
+    3: "Block 3.png",
+    4: "Block 4.png",
+    5: "Block 5.png",
+    6: "Block 6.png",
+    7: "Block 7.png",
+    8: "Block 8.png",
+    9: "Block 9.png",
+    10: "Block 10.png",
+    11: "Block 11.png",
+    12: "Block 12.png",
+    13: "Block 13.png",
+    14: "Block 14.png",
+    15: "Block 15.png"
+};
+
+// ----------------------------------
+// 2-WAY BLOCK DEFINITIONS
+// ----------------------------------
 const twoWayBlocks = {
     1: { formation_1: "Compressed Accordion", inter: "Inter", formation_2: "Compressed Accordion" },
     2: { formation_1: "Compressed Accordion", inter: "Inter (360° turn)", formation_2: "Compressed Accordion" },
@@ -19,6 +40,9 @@ const twoWayBlocks = {
     15: { formation_1: "Caterpillar", inter: "Inter (360° turn)", formation_2: "Sidebody" }
 };
 
+// ----------------------------------
+// RANDOM LETTERS (A-D)
+// ----------------------------------
 const twoWayRandoms = {
     "A": "Caterpillar",
     "B": "Star",
@@ -26,9 +50,9 @@ const twoWayRandoms = {
     "D": "Sidebody"
 };
 
-// -------------------------------
-// RANDOMIZER
-// -------------------------------
+// ----------------------------------
+// GENERATE A RANDOM 2-WAY DIVE
+// ----------------------------------
 function generateTwoWay() {
     const blockNum = Math.floor(Math.random() * 15) + 1;
     const randomLetter = ["A", "B", "C", "D"][Math.floor(Math.random() * 4)];
@@ -36,18 +60,23 @@ function generateTwoWay() {
     const block = twoWayBlocks[blockNum];
     const randomName = twoWayRandoms[randomLetter];
 
-    // Update GUI
+    // Update text
     document.getElementById("diveCode").textContent = `Dive: ${blockNum}${randomLetter}`;
-    document.getElementById("formation1").textContent = block.formati
     document.getElementById("formation1").textContent = block.formation_1;
     document.getElementById("inter").textContent = block.inter;
     document.getElementById("formation2").textContent = block.formation_2;
     document.getElementById("randomName").textContent = `${randomLetter}: ${randomName}`;
 
+    // Update block image
+    const imgElement = document.getElementById("blockImage");
+    imgElement.src = blockImages[blockNum];
+    imgElement.classList.remove("hidden");
+
+    // Reveal results
     document.getElementById("results").classList.remove("hidden");
 }
 
-// -------------------------------
-// EVENT LISTENER
-// -------------------------------
+// ----------------------------------
+// BUTTON EVENT LISTENER
+// ----------------------------------
 document.getElementById("generateBtn").addEventListener("click", generateTwoWay);

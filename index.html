@@ -11,7 +11,7 @@
 
     <header>
         <h1>2-Way Skydiving Dive Generator</h1>
-        <p>Click the button to generate a randomized dive block + random.</p>
+        <p>Click the button to generate a randomized block + random.</p>
     </header>
 
     <main>
@@ -19,9 +19,15 @@
 
         <div id="results" class="hidden">
             <div class="card">
+
                 <h2 id="diveCode">Dive: --</h2>
 
+                <!-- Block Image -->
+                <img id="blockImage" src="" alt="Block Image" class="block-img hidden">
+
+                <!-- Formation breakdown -->
                 <div class="formations">
+
                     <div class="formation">
                         <h3>Formation 1</h3>
                         <p id="formation1">--</p>
@@ -36,12 +42,15 @@
                         <h3>Formation 2</h3>
                         <p id="formation2">--</p>
                     </div>
+
                 </div>
 
+                <!-- Random -->
                 <div class="randomCard">
                     <h3>Random</h3>
                     <p id="randomName">--</p>
                 </div>
+
             </div>
         </div>
 
