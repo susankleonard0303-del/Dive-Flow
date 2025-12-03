@@ -1,5 +1,5 @@
 //--------------------------------------------
-// 2-WAY DATA (unchanged)
+// 2-WAY DATA
 //--------------------------------------------
 const blockImages2Way = {
     1:"Block 1.png",2:"Block 2.png",3:"Block 3.png",4:"Block 4.png",
@@ -31,7 +31,7 @@ const twoWayRandoms = {
 };
 
 //--------------------------------------------
-// 4-WAY DATA — TEAM-ONLY BLOCKS
+// 4-WAY BLOCKS (TEAM-ONLY)
 //--------------------------------------------
 const fourWayBlocks = {
     2:{formation_1:"Sidebody Donut",inter:"Inter (360°/360°)",formation_2:"Side Flake Donut"},
@@ -44,14 +44,28 @@ const fourWayBlocks = {
     21:{formation_1:"Zig Zag",inter:"Inter (360°/360°)",formation_2:"Marquis"}
 };
 
+//--------------------------------------------
+// 4-WAY BLOCK DIFFICULTY
+//--------------------------------------------
+const fourWayDifficulty = {
+    2:"3/8",
+    4:"4/8",
+    6:"6/8",
+    7:"2/8",
+    8:"7/8",
+    9:"1/8",
+    19:"8/8",
+    21:"5/8"
+};
+
+//--------------------------------------------
+// 4-WAY IMAGES
+//--------------------------------------------
 const blockImages4Way = {
     2:"block2.png",4:"block4.png",6:"block6.png",7:"block7.png",
     8:"block8.png",9:"block9.png",19:"block19.png",21:"block21.png"
 };
 
-//--------------------------------------------
-// RANDOMS
-//--------------------------------------------
 const fourWayRandoms = {
     "A":"Unipod","B":"Stairstep Diamond","C":"Murphy Flake","D":"Yuan",
     "E":"Meeker","F":"Open Accordian","G":"Cataccord","H":"Bow",
@@ -69,7 +83,7 @@ const randomImages4Way = {
 // 2-WAY GENERATOR
 //--------------------------------------------
 function generate2Way() {
-    const blockNum = Math.floor(Math.random() * 15) + 1;
+    const blockNum = Math.floor(Math.random()*15)+1;
     const letter = ["A","B","C","D"][Math.floor(Math.random()*4)];
 
     const block = twoWayBlocks[blockNum];
@@ -89,11 +103,11 @@ function generate2Way() {
 }
 
 //--------------------------------------------
-// 4-WAY SEQUENCE BUILDERS
+// SEQUENCE BUILDER
 //--------------------------------------------
 function buildSequence(steps) {
     const container = document.getElementById("sequenceContainer");
-    container.innerHTML = ""; // clear old sequence
+    container.innerHTML = "";
 
     steps.forEach(step => {
         const div = document.createElement("div");
@@ -114,15 +128,14 @@ function buildSequence(steps) {
 }
 
 //--------------------------------------------
-// 4-WAY GENERATION MODES
+// 4-WAY MODES
 //--------------------------------------------
 function generate4Way_3Random() {
     const letters = Object.keys(fourWayRandoms);
     const chosen = [];
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i++)
         chosen.push(letters[Math.floor(Math.random()*letters.length)]);
-    }
 
     display4WayDive(chosen);
 }
@@ -131,16 +144,15 @@ function generate4Way_4Random() {
     const letters = Object.keys(fourWayRandoms);
     const chosen = [];
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 4; i++)
         chosen.push(letters[Math.floor(Math.random()*letters.length)]);
-    }
 
     display4WayDive(chosen);
 }
 
 function generate4Way_BlockRandoms() {
-    const blockList = [2,4,6,7,8,9,19,21];
-    const block = blockList[Math.floor(Math.random()*blockList.length)];
+    const blocks = [2,4,6,7,8,9,19,21];
+    const block = blocks[Math.floor(Math.random()*blocks.length)];
 
     const letters = Object.keys(fourWayRandoms);
     const rand1 = letters[Math.floor(Math.random()*letters.length)];
@@ -150,7 +162,7 @@ function generate4Way_BlockRandoms() {
 }
 
 //--------------------------------------------
-// DISPLAY 4-WAY DIVE (full visual sequence)
+// 4-WAY DIVE DISPLAY (with difficulty)
 //--------------------------------------------
 function display4WayDive(sequenceArray) {
 
@@ -159,12 +171,17 @@ function display4WayDive(sequenceArray) {
     const steps = [];
 
     sequenceArray.forEach(item => {
+
+        // BLOCK
         if (typeof item === "number") {
             steps.push({
-                label: `Block ${item}`,
+                label: `Block ${item} (Difficulty ${fourWayDifficulty[item]})`,
                 image: blockImages4Way[item]
             });
-        } else {
+        }
+
+        // RANDOM
+        else {
             steps.push({
                 label: `Random ${item}`,
                 image: randomImages4Way[item]
@@ -177,15 +194,13 @@ function display4WayDive(sequenceArray) {
         `4-Way Dive: ${diveCode}`;
 
     buildSequence(steps);
-
     document.getElementById("results4way").classList.remove("hidden");
 }
 
 //--------------------------------------------
-// BUTTONS
+// BUTTON LISTENERS
 //--------------------------------------------
 document.getElementById("btn2way").addEventListener("click", generate2Way);
 document.getElementById("btn4way_3rand").addEventListener("click", generate4Way_3Random);
 document.getElementById("btn4way_4rand").addEventListener("click", generate4Way_4Random);
 document.getElementById("btn4way_block").addEventListener("click", generate4Way_BlockRandoms);
-
