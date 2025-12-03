@@ -173,9 +173,11 @@ function display4WayDive(sequenceArray) {
     sequenceArray.forEach(item => {
 
         // BLOCK
+    
         if (typeof item === "number") {
+            const diff = fourWayDifficulty[item] || "N/A";
             steps.push({
-                label: `Block ${item} (Difficulty ${fourWayDifficulty[item]})`,
+                label: `Block ${item}: ${diff}`,
                 image: blockImages4Way[item]
             });
         }
@@ -204,3 +206,4 @@ document.getElementById("btn2way").addEventListener("click", generate2Way);
 document.getElementById("btn4way_3rand").addEventListener("click", generate4Way_3Random);
 document.getElementById("btn4way_4rand").addEventListener("click", generate4Way_4Random);
 document.getElementById("btn4way_block").addEventListener("click", generate4Way_BlockRandoms);
+
